@@ -44,11 +44,10 @@ async function run () {
                 const serviceBookings = bookings.filter(b => b.treatment === service.name);
                 const booked = serviceBookings.map(s => s.slot);
                 const available = service.slots.filter(s => !booked.includes(s));
-                // service.booked = booked;
                 service.available = available;
             })
 
-            res.send(bookings);
+            res.send(services);
         })
         /**
          * API Naming Convention
